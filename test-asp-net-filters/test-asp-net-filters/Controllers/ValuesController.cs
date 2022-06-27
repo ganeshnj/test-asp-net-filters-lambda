@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Amazon.Lambda.Core;
 using Microsoft.AspNetCore.Mvc;
 
 namespace test_asp_net_filters.Controllers
@@ -13,6 +14,7 @@ namespace test_asp_net_filters.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            LambdaLogger.Log("ValuesController.Get");
             return new string[] { "value1", "value2" };
         }
 
